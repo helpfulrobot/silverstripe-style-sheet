@@ -105,7 +105,7 @@ Code Examples
 	 .$CSSClass('background') { background-color: $Value; }
 	<% end_loop %>
 
-####`mysite/code/Color_SiteConfigExtension.php`
+####`mysite/code/Colors_SiteConfigExtension.php`
 	<?php
 	class Colors_SiteConfigExtension extends DataExtension {
 	  /**
@@ -131,4 +131,4 @@ Code Examples
 ####`mysite/code/config.yml`
 	SiteConfig:
 	  extensions:
-	    Color_SiteConfigExtension
+	    Colors_SiteConfigExtension
