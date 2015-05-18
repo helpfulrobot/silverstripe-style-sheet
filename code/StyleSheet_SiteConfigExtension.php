@@ -34,12 +34,6 @@ class StyleSheet_SiteConfigExtension extends DataExtension {
   public function ExportStyleSheet() {
     //create file
     $data = $this->RenderStyleSheet();
-
-    //minify data
-    $data = str_replace(' ', '', $data); //removes spaces
-    $data = str_replace("\r\n", '', $data); //removes new lines
-    $data = str_replace("\t", '', $data); //removes tabs
-
     $this->forceFilePutContents(STYLE_SHEET_SAVE_PATH, $data);
   }
 
@@ -64,8 +58,17 @@ class StyleSheet_SiteConfigExtension extends DataExtension {
       }
   }
 
-  public function RenderStyleSheet() {    
-    return $this->owner->renderWith('StyleSheet');
+  public function RenderStyleSheet($minify = true) {    
+    $data = $this->owner->renderWith('StyleSheet');
+
+    //minify CSS
+    if ($minify) {
+      $data = str_replace(' ', '', $data); //removes spaces
+      $data = str_replace("\r\n", '', $data); //removes new lines
+      $data = str_replace("\t", '', $data); //removes tabs
+    }
+
+    return $data;
   }
 
   public function getStyleObjects() {
