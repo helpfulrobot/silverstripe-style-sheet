@@ -1,0 +1,3 @@
+SiteConfig:
+	  extensions:
+	    Color_SiteConfigExtension

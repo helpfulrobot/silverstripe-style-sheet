@@ -1,0 +1,14 @@
+---
+Name: silverstripe-style-sheet
+---
+SiteConfig:
+  extensions:
+    - StyleSheet_SiteConfigExtension
+
+ContentController:
+  extensions:
+    - StyleSheet_ContentControllerExtension
+
+LeftAndMain:
+  extra_requirements_css:
+    - silverstripe-style-sheet/css/cms/min.css

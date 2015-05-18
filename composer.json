@@ -1,0 +1,25 @@
+{
+    "name": "stephenjcorwin/silverstripe-style-sheet",
+    "description": "SilverStripe module which provides a `StyleObject` DataObject and a `Settings->Appearance->StyleSheet` Menu. `StyleObjects` are used to store styling properties (branding colors, icons, etc) in the generated css files.",
+    "type": "silverstripe-module",
+    "homepage": "https://github.com/stephenjcorwin/silverstripe-style-sheet/",
+    "keywords": [
+        "silverstripe",
+        "style sheet"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Stephen Corwin",
+            "email": "stephenjcorwin@gmail.com",
+            "homepage": "http://stephenjcorwin.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/stephenjcorwin/silverstripe-style-sheet/issues"
+    },
+    "require": {
+        "silverstripe/cms": "~3.1",
+        "silverstripe/framework": "~3.1"
+    }
+}
