@@ -13,12 +13,19 @@ Requirements
 ---------------------------------------
 -   SilverStripe 3.1
 
+Related
+---------------------------------------
+-   [stephenjcorwin/silverstripe-colors](https://github.com/stephenjcorwin/silverstripe-colors/)
+-   [stephenjcorwin/silverstripe-icons](https://github.com/stephenjcorwin/silverstripe-icons/)
+-   [stephenjcorwin/silverstripe-opacities](https://github.com/stephenjcorwin/silverstripe-opacities/)
+-   [stephenjcorwin/silverstripe-text](https://github.com/stephenjcorwin/silverstripe-text/)
+
 Features
 ---------------------------------------
--   Easily create custom StyleObjects
+-   Easily create custom `StyleObjects`
 -   Attach custom CSS to be loaded from the `Settings->Appearance->StyleSheet` Menu
--   Generates a minified css file hooking into loaded StyleObjects
--   Automatically imports the minified css file to the SiteTree
+-   Generates a minified css file hooking into loaded `StyleObjects`
+-   Automatically imports the minified css file to the `SiteTree`
 
 Installation
 ---------------------------------------
@@ -30,7 +37,7 @@ Installation can be done either by composer or by manually downloading a release
 ####Manually:
 1.   Download the module from [the releases page](https://github.com/stephenjcorwin/silverstripe-style-sheet/releases)
 2.   Extract the file
-3.   Make sure the folder after being extracted is name 'silverstripe-style-sheet'
+3.   Make sure the folder after being extracted is name `silverstripe-style-sheet`
 4.   Place this directory in your site's root directory
 
 ####Configuration:
@@ -53,7 +60,7 @@ Code Examples
 ####StyleObject Template:
 #####Each `StyleObject` has 4 parts:
 -   A `ClassName` which extends `StyleObject`
--	A `ClassName_Style.ss` which handles the CSS rules
+-    A `ClassName_Style.ss` which handles the CSS rules
 -	A `ClassName_SiteConfigExtension` to allow the CMS users to create and edit the `StyleObject`
 -	And an activation hook in the `config.yml` to enable the `ClassName_SiteConfigExtension`
 
