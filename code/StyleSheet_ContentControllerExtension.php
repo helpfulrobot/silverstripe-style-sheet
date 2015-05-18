@@ -5,7 +5,6 @@ class StyleSheet_ContentControllerExtension extends Extension {
    */
 
   public function onAfterInit() {
-    $siteConfig = SiteConfig::current_site_config();
     Requirements::css(STYLE_SHEET_PATH);
   }
 }

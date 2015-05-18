@@ -1,6 +1,6 @@
-<div class="style-sheet-cms-preview">
+<div class="stylesheet-cms-preview">
 	<h3>Style Sheet &ndash; Raw</h3>
-	<div class="style-sheet-cms-preview-stylecontainer">
+	<div class="stylesheet-cms-preview-stylecontainer">
 		<% loop $StyleObjects %>
 			<h4>/* $ClassName.UpperCase() &ndash; $Name.UpperCase() */</h4>
 			<p>$RenderStyleSheet</p>
@@ -13,7 +13,7 @@
 	</div>
 
 	<h3>Style Sheet &ndash; Minified</h3>
-	<div class="style-sheet-cms-preview-stylecontainer">
+	<div class="stylesheet-cms-preview-stylecontainer">
 		$RenderStyleSheet
 	</div>
 </div>
