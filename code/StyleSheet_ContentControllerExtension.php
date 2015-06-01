@@ -5,6 +5,6 @@ class StyleSheet_ContentControllerExtension extends Extension {
    */
 
   public function onAfterInit() {
-    Requirements::css(STYLE_SHEET_PATH);
+    Requirements::css(STYLESHEET_CSS_PATH);
   }
 }

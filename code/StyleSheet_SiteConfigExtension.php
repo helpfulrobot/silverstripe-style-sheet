@@ -34,7 +34,7 @@ class StyleSheet_SiteConfigExtension extends DataExtension {
   public function ExportStyleSheet() {
     //create file
     $data = $this->RenderStyleSheet();
-    $this->forceFilePutContents(STYLE_SHEET_SAVE_PATH, $data);
+    $this->forceFilePutContents(STYLESHEET_CSS_SAVE_PATH, $data);
   }
 
   /**
