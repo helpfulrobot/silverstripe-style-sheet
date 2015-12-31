@@ -1,10 +1,11 @@
 <?php
-class StyleSheet_SiteConfigExtension extends DataExtension {
-  /**
+class StyleSheet_SiteConfigExtension extends DataExtension
+{
+    /**
    * FIELDS
   */
 
-  private static $db = array (
+  private static $db = array(
     'StyleSheetCustomCSS' => 'Text'
   );
 
@@ -12,40 +13,44 @@ class StyleSheet_SiteConfigExtension extends DataExtension {
    * CMS FIELDS
    */
 
-  public function updateCMSFields(FieldList $fields) {    
-    /**
+  public function updateCMSFields(FieldList $fields)
+  {
+      /**
      * APPEARANCE TAB
      */
 
     $tab = 'Root.Appearance.StyleSheet';
 
-    $field = new TextareaField('StyleSheetCustomCSS', 'Custom CSS');
-    $fields->addFieldToTab($tab, $field);
+      $field = new TextareaField('StyleSheetCustomCSS', 'Custom CSS');
+      $fields->addFieldToTab($tab, $field);
 
-    $html = $this->owner->renderWith('StyleSheet_CMS_Preview');
-    $field = new LiteralField('Preview', $html);
-    $fields->addFieldToTab($tab, $field);
+      $html = $this->owner->renderWith('StyleSheet_CMS_Preview');
+      $field = new LiteralField('Preview', $html);
+      $fields->addFieldToTab($tab, $field);
   }
 
-  public function onAfterWrite() {
-    $this->ExportStyleSheet();
-  }
+    public function onAfterWrite()
+    {
+        $this->ExportStyleSheet();
+    }
 
-  public function ExportStyleSheet() {
-    //create file
+    public function ExportStyleSheet()
+    {
+        //create file
     $data = $this->RenderStyleSheet();
-    $this->forceFilePutContents(STYLESHEET_CSS_SAVE_PATH, $data);
-  }
+        $this->forceFilePutContents(STYLESHEET_CSS_SAVE_PATH, $data);
+    }
 
   /**
    * create file with content, and create folder structure if doesn't exist 
    * @param String $filepath
    * @param String $message
    */
-  public function forceFilePutContents ($filepath, $message){
+  public function forceFilePutContents($filepath, $message)
+  {
       try {
           $isInFolder = preg_match("/^(.*)\/([^\/]+)$/", $filepath, $filepathMatches);
-          if($isInFolder) {
+          if ($isInFolder) {
               $folderName = $filepathMatches[1];
               $fileName = $filepathMatches[2];
               if (!is_dir($folderName)) {
@@ -58,21 +63,23 @@ class StyleSheet_SiteConfigExtension extends DataExtension {
       }
   }
 
-  public function RenderStyleSheet($minify = true) {    
-    $data = $this->owner->renderWith('StyleSheet');
+    public function RenderStyleSheet($minify = true)
+    {
+        $data = $this->owner->renderWith('StyleSheet');
 
     //minify CSS
     if ($minify) {
-      $data = str_replace(' ', '', $data); //removes spaces
+        $data = str_replace(' ', '', $data); //removes spaces
       $data = str_replace("\r\n", '', $data); //removes new lines
       $data = str_replace("\t", '', $data); //removes tabs
     }
 
-    return $data;
-  }
+        return $data;
+    }
 
-  public function getStyleObjects() {
-    $data = DataObject::get('StyleObject');
-    return $data;
-  }
+    public function getStyleObjects()
+    {
+        $data = DataObject::get('StyleObject');
+        return $data;
+    }
 }
